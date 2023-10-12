@@ -61,7 +61,7 @@ library(tidyverse)
 
 #you can also read-in data via syntax
 gapminder_1997 <- 
-read_csv("Documents/UMichData/data-carpentries/un-report/data/gapminder_1997.csv")
+read_csv("data/gapminder_1997.csv")
 #^has been edited via unix, double check
 
 #######################
@@ -102,7 +102,6 @@ name
 
 #starting an object with a number isn't great
 #ex: "1number <- 3"
-1number <- 3
 #you get an error if you run that
 #better:
 number1 <- 3
@@ -110,7 +109,6 @@ number1 <- 3
 
 #also can't have spaces in the name
 #ex: "favorite number <- 7"
-favorite number <- 7
 #R is like. why are you like this and you get an error
 #one way to get around it is to add an underscore, or to capitalize subsequent words
 favorite_number <- 7
@@ -123,7 +121,7 @@ favoriteNumber <- 8
 
 read_csv()
 #you can't just run that because you're trying to run a function with no argument*
-read_csv("gapminder_1997.csv")
+read_csv("data/gapminder_1997.csv")
 #much better
 
 #but if you ever need help, then "?[function]" will give you more information
@@ -136,7 +134,7 @@ read_csv("gapminder_1997.csv")
 #R automatically assumes that arguments are the order in which they're listed in the help file
 #if you want them in a different order, specify the file argument
 
-gapminder_1997 <- read_csv(file = "gapminder_1997.csv")
+gapminder_1997 <- read_csv(file = "data/gapminder_1997.csv")
 #passing an argument
 
 #*though not all functions require arguments
@@ -380,7 +378,82 @@ ggplot(data=gapminder_1997) +
 #there are other things you can do to customize your configuration
 #to check what your configuration is: git config --list
 
-#### VERSION CONTROL ####
+
+###########################
+###########################
+####                   ####
+####  VERSION CONTROL  ####
+####   (and github)    ####
+####                   ####
+###########################
+###########################
+
+#never delete .git because you'll lose everything
+#some technical difficulties later, there is now a git pane
+#(git was saved in a strange area)
+#when adding something to the repository, MAKE SURE YOU ACTUALLY WANT TO ADD IT
+#probably no huge files, because they cause issues
+#NO PASSWORDS OR PROTECTED INFORMATION
+
+#can add things to the .gitignore file (files pane) and that means that the repository will ignore them
+#good for passwords and protected info, so it doesn't go into the repository
+#terminology: things are "committed" to the repository
+
+#from github, post making new repository, copy paste into terminal:
+#git remote add origin https://github.com/zichettella/un-report.git
+#git branch -M main
+#git push -u origin main
+
+#it'll ask for your username and password - NOT ACTUALLY THE PASSWORD, github wants a token
+# go to the github webpage --> account settings, developer settings, token (classic) 
+# set an expiration date, check repo and user, then generate token
+# copy it, then paste it into the password command
+# IT WILL NOT BE VISIBLE/only enter it once
+
+
+#the respositiory on github will have an address that you can put on your paper so that people can see your analyses
+#or you can put it on a cv to prove that you know how to code lol
+#repositories can be either public or private; make sure you pick the right one for the project
+#Recommendation: uploading data isn't a great idea because it's big enough to break it (use .gitignore to hide big files)
+#code should be fine tho
+
+#add a readme to the file
+# file -> new file -> markdown file
+
+#on git pane, clock symbol shows history [changes]
+#can click on past versions of file; link to view them on right (the random code is called a "sha")
+
+#green arrow pushes changes up to github
+
+#commit when you've done an amount of work you want to save (i.e. writing a paragraph, not just minor changes)
+#general advice is to push at the end of the day
+
+#markdown notes forthcoming tomorrow (## means make this a heading)
+
+#the issues tab: can create an issue & submit it
+#if your colleagues are on github, you can @ them and they'll be notified
+
+#you can also create files on github
+#can add licenses via the insights tab
+
+#get things from github to your local computer via "pull"
+
+
+###EXERCISE###
+
+ggplot(data=gapminder_1997) +
+  aes(x = gdpPercap, 
+      y = lifeExp, 
+      color = continent) +
+  labs(x = "GDP Per Capita", 
+       y = "Life Expectancy", 
+       title = "Do people in wealthy countries live longer?") +
+  geom_point()+
+  scale_color_brewer(palette="Set2")
+  
+ggsave("figures/gdpPercap_lifeExp.png")
+
+
 
 
 
