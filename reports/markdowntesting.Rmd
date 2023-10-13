@@ -1,0 +1,65 @@
+---
+title: "A UN Report on the Relationship Between GDP and Life Expectancy"
+author: "Brianna Zichettella"
+date: "2023-10-13"
+output: html_document
+---
+#want more help? try <https://rmarkdown.rstudio.com/>
+#also has a cheatsheet (in the help menu)
+#also R for Data Science: <https://r4ds.had.co.nz/>
+
+##Trial and Error
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#note that the code blocs are grey
+```{r}
+2 + 2
+```
+
+#to name it:
+```{r simple_addition}
+2 + 2
+```
+
+#to exclude it:
+```{r simple_addition2, include=FALSE}
+2 + 2
+```
+
+#to see the result but not include it:
+```{r simple_addition3, echo = FALSE}
+2 + 2
+```
+#didn't work tho
+
+```{r simple_addition4, echo = FALSE}
+four <- 2 + 2
+```
+#set inline code with a singel backtick
+
+Did you know that in R, the sum of 2 and 2 is `r four`. This is an example of inline code!
+
+Text can be *bold*
+double check that
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

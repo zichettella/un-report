@@ -329,6 +329,15 @@ left_join(gapminder_data, co2_data, by = c("country", "year"))
 #we're not doing that today, but. it's a thing tha can be done
 
 
+#title/author/date/output is the header, but you can add more things
+
+#a code begins with three backticks ``` and then a curly brace that contains {r} (at minimum)
+
+#```{r setup, include=FALSE}
+#knitr::opts_chunk$set(echo = TRUE)
+#```
+
+
 
 
 
