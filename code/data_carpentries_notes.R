@@ -341,6 +341,7 @@ ggplot(data=gapminder_1997) +
 #you can also run terminal in rstudio
 #tools --> terminal --> new terminal
 #enter "PS1='$ '" to shorten the command line
+## Note: [[PS1='$ ']] ---------------------
 #git config --global user.name "zichettella"
 #git config --global email "zichette@umich.edu"
 
@@ -360,14 +361,8 @@ ggplot(data=gapminder_1997) +
 #to check what your configuration is: git config --list
 
 
-###########################
-###########################
-####                   ####
-####  VERSION CONTROL  ####
-####   (and github)    ####
-####                   ####
-###########################
-###########################
+# Version Control ---------------------------------------------------------
+#and github
 
 #never delete .git because you'll lose everything
 #some technical difficulties later, there is now a git pane

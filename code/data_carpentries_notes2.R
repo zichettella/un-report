@@ -302,7 +302,31 @@ gapminder_data %>%
 ## Joins -------------------------------------------------------------------
 #combine dataframes
 
+#"leftjoin" would be visualizing your main dataframe (left frame) 
+#and anotherframe (right frame), and adding
+#ex: leftjoin(dataframe1, dataframe2, by = ("country" = "countries"))
+#("country" = "countries") matches data in two different frames, even if they're named differently
 
+
+#the general idea is taking two dataframes and matching them on a specific parameter
+#if there are extra parameters, you'll get errors
+#this was done quickly to illustrate, and kind of off script
+#so the data doesn't work super well with this, but:
+co2_data <- read_csv("data/co2-un-data.csv", skip = 1) %>% 
+  rename(country = '...2', year = Year)
+
+left_join(gapminder_data, co2_data, by = c("country", "year"))
+
+#use antijoin to find what is in one dataframe but not the other
+#end part 1
+
+
+# R Markdown --------------------------------------------------------------
+# (and reports)
+
+#reproducable research documents; Dr. Schloss; all the papers from his lab are written 
+#in R Markdown so that you can see what the data attaches to
+#we're not doing that today, but. it's a thing tha can be done
 
 
 
